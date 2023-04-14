@@ -15,6 +15,8 @@
 		0DAFB6ED29E951DF00990D93 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DAFB6EB29E951DF00990D93 /* LaunchScreen.storyboard */; };
 		0DAFB6F929E9566F00990D93 /* PharmacyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAFB6F829E9566F00990D93 /* PharmacyTableViewCell.swift */; };
 		0DAFB6FB29E9568300990D93 /* PharmacyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAFB6FA29E9568300990D93 /* PharmacyViewController.swift */; };
+		0DAFB6FD29E95A0200990D93 /* Pharmacy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAFB6FC29E95A0200990D93 /* Pharmacy.swift */; };
+		0DAFB6FF29E9E78B00990D93 /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAFB6FE29E9E78B00990D93 /* WebService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		0DAFB6EE29E951DF00990D93 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0DAFB6F829E9566F00990D93 /* PharmacyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PharmacyTableViewCell.swift; sourceTree = "<group>"; };
 		0DAFB6FA29E9568300990D93 /* PharmacyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PharmacyViewController.swift; sourceTree = "<group>"; };
+		0DAFB6FC29E95A0200990D93 /* Pharmacy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pharmacy.swift; sourceTree = "<group>"; };
+		0DAFB6FE29E9E78B00990D93 /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +78,8 @@
 		0DAFB6F429E9524000990D93 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0DAFB6FC29E95A0200990D93 /* Pharmacy.swift */,
+				0DAFB6FE29E9E78B00990D93 /* WebService.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -168,7 +174,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DAFB6FD29E95A0200990D93 /* Pharmacy.swift in Sources */,
 				0DAFB6E529E951DE00990D93 /* ViewController.swift in Sources */,
+				0DAFB6FF29E9E78B00990D93 /* WebService.swift in Sources */,
 				0DAFB6FB29E9568300990D93 /* PharmacyViewController.swift in Sources */,
 				0DAFB6E129E951DE00990D93 /* AppDelegate.swift in Sources */,
 				0DAFB6F929E9566F00990D93 /* PharmacyTableViewCell.swift in Sources */,
