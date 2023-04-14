@@ -13,6 +13,8 @@
 		0DAFB6E829E951DE00990D93 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DAFB6E629E951DE00990D93 /* Main.storyboard */; };
 		0DAFB6EA29E951DF00990D93 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0DAFB6E929E951DF00990D93 /* Assets.xcassets */; };
 		0DAFB6ED29E951DF00990D93 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DAFB6EB29E951DF00990D93 /* LaunchScreen.storyboard */; };
+		0DAFB6F929E9566F00990D93 /* PharmacyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAFB6F829E9566F00990D93 /* PharmacyTableViewCell.swift */; };
+		0DAFB6FB29E9568300990D93 /* PharmacyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAFB6FA29E9568300990D93 /* PharmacyViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		0DAFB6E929E951DF00990D93 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0DAFB6EC29E951DF00990D93 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0DAFB6EE29E951DF00990D93 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0DAFB6F829E9566F00990D93 /* PharmacyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PharmacyTableViewCell.swift; sourceTree = "<group>"; };
+		0DAFB6FA29E9568300990D93 /* PharmacyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PharmacyViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,9 +63,6 @@
 				0DAFB6F729E9526F00990D93 /* ViewModel */,
 				0DAFB6F529E9524B00990D93 /* View */,
 				0DAFB6F429E9524000990D93 /* Model */,
-				0DAFB6E029E951DE00990D93 /* AppDelegate.swift */,
-				0DAFB6E229E951DE00990D93 /* SceneDelegate.swift */,
-				0DAFB6E429E951DE00990D93 /* ViewController.swift */,
 				0DAFB6E629E951DE00990D93 /* Main.storyboard */,
 				0DAFB6E929E951DF00990D93 /* Assets.xcassets */,
 				0DAFB6EB29E951DF00990D93 /* LaunchScreen.storyboard */,
@@ -80,6 +81,11 @@
 		0DAFB6F529E9524B00990D93 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				0DAFB6E029E951DE00990D93 /* AppDelegate.swift */,
+				0DAFB6E229E951DE00990D93 /* SceneDelegate.swift */,
+				0DAFB6F829E9566F00990D93 /* PharmacyTableViewCell.swift */,
+				0DAFB6FA29E9568300990D93 /* PharmacyViewController.swift */,
+				0DAFB6E429E951DE00990D93 /* ViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -163,7 +169,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				0DAFB6E529E951DE00990D93 /* ViewController.swift in Sources */,
+				0DAFB6FB29E9568300990D93 /* PharmacyViewController.swift in Sources */,
 				0DAFB6E129E951DE00990D93 /* AppDelegate.swift in Sources */,
+				0DAFB6F929E9566F00990D93 /* PharmacyTableViewCell.swift in Sources */,
 				0DAFB6E329E951DE00990D93 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -14,6 +14,10 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-
+    @IBAction func tıkl(_ sender: Any) {
+        
+        performSegue(withIdentifier: "toPharmacyPage", sender: nil)
+    }
+    
 }
 
