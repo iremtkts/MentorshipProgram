@@ -17,6 +17,8 @@
 		0DAFB6FB29E9568300990D93 /* PharmacyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAFB6FA29E9568300990D93 /* PharmacyViewController.swift */; };
 		0DAFB6FD29E95A0200990D93 /* Pharmacy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAFB6FC29E95A0200990D93 /* Pharmacy.swift */; };
 		0DAFB6FF29E9E78B00990D93 /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAFB6FE29E9E78B00990D93 /* WebService.swift */; };
+		0DAFB70229EC8CA000990D93 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 0DAFB70129EC8CA000990D93 /* Alamofire */; };
+		0DAFB70529EC91E600990D93 /* PharmacyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAFB70429EC91E600990D93 /* PharmacyViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,7 @@
 		0DAFB6FA29E9568300990D93 /* PharmacyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PharmacyViewController.swift; sourceTree = "<group>"; };
 		0DAFB6FC29E95A0200990D93 /* Pharmacy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pharmacy.swift; sourceTree = "<group>"; };
 		0DAFB6FE29E9E78B00990D93 /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
+		0DAFB70429EC91E600990D93 /* PharmacyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PharmacyViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +42,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DAFB70229EC8CA000990D93 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,6 +68,7 @@
 		0DAFB6DF29E951DE00990D93 /* DutyPharmacy */ = {
 			isa = PBXGroup;
 			children = (
+				0DAFB70329EC8E7700990D93 /* PharmacyService */,
 				0DAFB6F729E9526F00990D93 /* ViewModel */,
 				0DAFB6F529E9524B00990D93 /* View */,
 				0DAFB6F429E9524000990D93 /* Model */,
@@ -79,7 +84,6 @@
 			isa = PBXGroup;
 			children = (
 				0DAFB6FC29E95A0200990D93 /* Pharmacy.swift */,
-				0DAFB6FE29E9E78B00990D93 /* WebService.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -99,8 +103,17 @@
 		0DAFB6F729E9526F00990D93 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				0DAFB70429EC91E600990D93 /* PharmacyViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		0DAFB70329EC8E7700990D93 /* PharmacyService */ = {
+			isa = PBXGroup;
+			children = (
+				0DAFB6FE29E9E78B00990D93 /* WebService.swift */,
+			);
+			path = PharmacyService;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -119,6 +132,9 @@
 			dependencies = (
 			);
 			name = DutyPharmacy;
+			packageProductDependencies = (
+				0DAFB70129EC8CA000990D93 /* Alamofire */,
+			);
 			productName = DutyPharmacy;
 			productReference = 0DAFB6DD29E951DE00990D93 /* DutyPharmacy.app */;
 			productType = "com.apple.product-type.application";
@@ -147,6 +163,9 @@
 				Base,
 			);
 			mainGroup = 0DAFB6D429E951DE00990D93;
+			packageReferences = (
+				0DAFB70029EC8CA000990D93 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = 0DAFB6DE29E951DE00990D93 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -177,6 +196,7 @@
 				0DAFB6FD29E95A0200990D93 /* Pharmacy.swift in Sources */,
 				0DAFB6E529E951DE00990D93 /* ViewController.swift in Sources */,
 				0DAFB6FF29E9E78B00990D93 /* WebService.swift in Sources */,
+				0DAFB70529EC91E600990D93 /* PharmacyViewModel.swift in Sources */,
 				0DAFB6FB29E9568300990D93 /* PharmacyViewController.swift in Sources */,
 				0DAFB6E129E951DE00990D93 /* AppDelegate.swift in Sources */,
 				0DAFB6F929E9566F00990D93 /* PharmacyTableViewCell.swift in Sources */,
@@ -396,6 +416,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0DAFB70029EC8CA000990D93 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0DAFB70129EC8CA000990D93 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0DAFB70029EC8CA000990D93 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 0DAFB6D529E951DE00990D93 /* Project object */;
 }
