@@ -19,6 +19,7 @@
 		0DAFB6FF29E9E78B00990D93 /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAFB6FE29E9E78B00990D93 /* WebService.swift */; };
 		0DAFB70229EC8CA000990D93 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 0DAFB70129EC8CA000990D93 /* Alamofire */; };
 		0DAFB70529EC91E600990D93 /* PharmacyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAFB70429EC91E600990D93 /* PharmacyViewModel.swift */; };
+		0DAFB70929ED3FCF00990D93 /* Cities.json in Resources */ = {isa = PBXBuildFile; fileRef = 0DAFB70829ED3FCF00990D93 /* Cities.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		0DAFB6FC29E95A0200990D93 /* Pharmacy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pharmacy.swift; sourceTree = "<group>"; };
 		0DAFB6FE29E9E78B00990D93 /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
 		0DAFB70429EC91E600990D93 /* PharmacyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PharmacyViewModel.swift; sourceTree = "<group>"; };
+		0DAFB70829ED3FCF00990D93 /* Cities.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Cities.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 				0DAFB6E929E951DF00990D93 /* Assets.xcassets */,
 				0DAFB6EB29E951DF00990D93 /* LaunchScreen.storyboard */,
 				0DAFB6EE29E951DF00990D93 /* Info.plist */,
+				0DAFB70829ED3FCF00990D93 /* Cities.json */,
 			);
 			path = DutyPharmacy;
 			sourceTree = "<group>";
@@ -180,6 +183,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DAFB70929ED3FCF00990D93 /* Cities.json in Resources */,
 				0DAFB6ED29E951DF00990D93 /* LaunchScreen.storyboard in Resources */,
 				0DAFB6EA29E951DF00990D93 /* Assets.xcassets in Resources */,
 				0DAFB6E829E951DE00990D93 /* Main.storyboard in Resources */,
