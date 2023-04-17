@@ -47,9 +47,11 @@ class WebService {
     
     
     
-    func fetchData (completion : @escaping (Result <String , Error>) -> Void) {
+    func fetchData (city: String, district: String? = nil , completion : @escaping (Result <String , Error>) -> Void) {
         
-        let url = "https://api.collectapi.com/health/dutyPharmacy?ilce=%C3%87ankaya&il=Ankara"
+        let districtParameter = district != nil ? "&ilce=\(district!)" : ""
+        let url = "https://api.collectapi.com/health/dutyPharmacy?il=\(city)\(districtParameter)"
+        
         guard let apiKey = ProcessInfo.processInfo.environment["API_KEY"] else {
                    print("API anahtarı bulunamadı.")
                    return

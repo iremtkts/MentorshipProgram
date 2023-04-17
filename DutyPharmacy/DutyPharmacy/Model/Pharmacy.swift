@@ -22,5 +22,11 @@ struct Pharmacy : Decodable {
     let dist : String
     let address : String
     let loc : String
+    let city : String
     
+}
+
+struct PharmacyResponse: Decodable {
+    let success: Bool
+    let result: [Pharmacy]
 }
