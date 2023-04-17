@@ -21,10 +21,10 @@ class ViewController: UIViewController {
     
     
     
-    let cities = ["Adana", "Adıyaman", "Afyonkarahisar", "Ağrı", "Amasya", "Ankara", "Antalya", "Artvin", "Aydın", "Balıkesir", "Bilecik", "Bingöl", "Bitlis", "Bolu", "Burdur", "Bursa", "Çanakkale", "Çankırı", "Çorum", "Denizli", "Diyarbakır", "Edirne", "Elazığ", "Erzincan", "Erzurum", "Eskişehir", "Gaziantep", "Giresun", "Gümüşhane", "Hakkari", "Hatay", "Isparta", "Mersin", "İstanbul", "İzmir", "Kars", "Kastamonu", "Kayseri", "Kırklareli", "Kırşehir", "Kocaeli", "Konya", "Kütahya", "Malatya", "Manisa", "Kahramanmaraş", "Mardin", "Muğla", "Muş", "Nevşehir", "Niğde", "Ordu", "Rize", "Sakarya", "Samsun", "Siirt", "Sinop", "Sivas", "Tekirdağ", "Tokat", "Trabzon", "Tunceli", "Şanlıurfa", "Uşak", "Van", "Yozgat", "Zonguldak", "Aksaray", "Bayburt", "Karaman", "Kırıkkale", "Batman", "Şırnak", "Bartın", "Ardahan", "Iğdır", "Yalova", "Karabük", "Kilis", "Osmaniye", "Düzce"]
+    let cities = ["Adana", "Adiyaman", "Afyonkarahisar", "Agri", "Amasya", "Ankara", "Antalya", "Artvin", "Aydin", "Balikesir", "Bilecik", "Bingol", "Bitlis", "Bolu", "Burdur", "Bursa", "Canakkale", "Cankiri", "Corum", "Denizli", "Diyarbakir", "Edirne", "Elazig", "Erzincan", "Erzurum", "Eskisehir", "Gaziantep", "Giresun", "Gumushane", "Hakkari", "Hatay", "Isparta", "Mersin", "İstanbul", "İzmir", "Kars", "Kastamonu", "Kayseri", "Kirklareli", "Kirsehir", "Kocaeli", "Konya", "Kutahya", "Malatya", "Manisa", "Kahramanmaras", "Mardin", "Mugla", "Mus", "Nevsehir", "Nigde", "Ordu", "Rize", "Sakarya", "Samsun", "Siirt", "Sinop", "Sivas", "Tekirdag", "Tokat", "Trabzon", "Tunceli", "Sanliurfa", "Usak", "Van", "Yozgat", "Zonguldak", "Aksaray", "Bayburt", "Karaman", "Kirikkale", "Batman", "Sirnak", "Bartin", "Ardahan", "Iğdir", "Yalova", "Karabük", "Kilis", "Osmaniye", "Duzce"]
 
 
-    var  districts = ["test1","test2"]
+    var districts = [District]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,6 +50,8 @@ class ViewController: UIViewController {
                 }
             }
         }
+        
+
         
         
     }
@@ -87,7 +89,7 @@ extension ViewController: UIPickerViewDelegate , UIPickerViewDataSource {
         case 1:
             return cities[row]
         case 2:
-            return districts[row]
+            return districts[row].text
         default:
             return "no data"
         }
@@ -96,10 +98,23 @@ extension ViewController: UIPickerViewDelegate , UIPickerViewDataSource {
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         switch pickerView.tag {
         case 1:
-            cityTextField.text = cities[row]
+            let selectedCity = cities[row]
+            cityTextField.text = selectedCity
             cityTextField.resignFirstResponder()
+            
+            pharmacyViewModel.fetchDistrictData(forCity: selectedCity) { [weak self] result in
+                DispatchQueue.main.async {
+                    switch result {
+                    case .success(let data):
+                        self?.districts = data
+                        self?.districtPickerView.reloadAllComponents()
+                    case .failure(let error):
+                        print(error.localizedDescription)
+                    }
+                }
+            }
         case 2:
-            districtTextField.text = districts[row]
+            districtTextField.text = districts[row].text
             districtTextField.resignFirstResponder()
         default:
             return

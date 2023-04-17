@@ -43,6 +43,10 @@ class WebService {
      
      */
     
+    
+    
+    
+    
     func fetchData (completion : @escaping (Result <String , Error>) -> Void) {
         
         let url = "https://api.collectapi.com/health/dutyPharmacy?ilce=%C3%87ankaya&il=Ankara"
@@ -65,6 +69,34 @@ class WebService {
             }
         }
         
+    }
+    
+    func fetchDistrictData(forCity city: String,completion : @escaping (Result <[District] , Error >) -> Void) {
+        
+        let url = "https://api.collectapi.com/health/districtList?il=\(city)"
+        guard let apiKey = ProcessInfo.processInfo.environment["API_KEY"] else {
+                   print("API anahtarı bulunamadı.")
+                   return
+               }
+        
+        let headers: HTTPHeaders = [
+                    "content-type": "application/json",
+                    "authorization": "\(apiKey)"
+                ]
+        
+        AF.request(url, method: .get, headers: headers).responseData { response in
+               switch response.result {
+               case .success(let data):
+                   do {
+                       let districtResponse = try JSONDecoder().decode(DistrictResponse.self, from: data)
+                       completion(.success(districtResponse.result))
+                   } catch {
+                       completion(.failure(error))
+                   }
+               case .failure(let error):
+                   completion(.failure(error))
+               }
+           }
     }
     
 }
