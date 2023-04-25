@@ -10,42 +10,7 @@ import Alamofire
 
 class WebService {
     
-    /*
-     
-     var headers: [String: String] = [:]
-
-     if let apiKey = ProcessInfo.processInfo.environment["API_KEY"] {
-         headers = [
-             "content-type": "application/json",
-             "authorization": " \(apiKey)"
-         ]
-     } else {
-         print("API anahtarı bulunamadı.")
-     }
-
-     let request = NSMutableURLRequest(url: NSURL(string: "https://api.collectapi.com/health/dutyPharmacy?ilce=%C3%87ankaya&il=Ankara")! as URL,
-                                                 cachePolicy: .useProtocolCachePolicy,
-                                             timeoutInterval: 10.0)
-     request.httpMethod = "GET"
-     request.allHTTPHeaderFields = headers
-
-     let session = URLSession.shared
-     let dataTask = session.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) -> Void in
-         if (error != nil) {
-             print(error)
-         } else {
-             let httpResponse = response as? HTTPURLResponse
-             print(httpResponse)
-         }
-     })
-
-     dataTask.resume()
-     
-     */
-    
-    
-    
-    
+    // GET Pharmacy Data
     
     func fetchData (city: String, district: String? = nil , completion : @escaping (Result <String , Error>) -> Void) {
         
@@ -72,6 +37,9 @@ class WebService {
         }
         
     }
+    
+    
+    // GET District Data
     
     func fetchDistrictData(forCity city: String,completion : @escaping (Result <[District] , Error >) -> Void) {
         

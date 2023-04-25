@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D65154A29F863EE0063F94E /* DistrictViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D65154929F863EE0063F94E /* DistrictViewModel.swift */; };
 		0DAFB6E129E951DE00990D93 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAFB6E029E951DE00990D93 /* AppDelegate.swift */; };
 		0DAFB6E329E951DE00990D93 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAFB6E229E951DE00990D93 /* SceneDelegate.swift */; };
 		0DAFB6E529E951DE00990D93 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAFB6E429E951DE00990D93 /* ViewController.swift */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0D65154929F863EE0063F94E /* DistrictViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistrictViewModel.swift; sourceTree = "<group>"; };
 		0DAFB6DD29E951DE00990D93 /* DutyPharmacy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DutyPharmacy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DAFB6E029E951DE00990D93 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0DAFB6E229E951DE00990D93 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +53,59 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0D65154429F863360063F94E /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				0D65154C29F8647E0063F94E /* Pharmacy */,
+				0D65154529F863420063F94E /* Locations */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		0D65154529F863420063F94E /* Locations */ = {
+			isa = PBXGroup;
+			children = (
+				0D65154829F863970063F94E /* ViewModel */,
+				0D65154729F863900063F94E /* View */,
+				0D65154629F863890063F94E /* Model */,
+			);
+			path = Locations;
+			sourceTree = "<group>";
+		};
+		0D65154629F863890063F94E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0DAFB70A29ED9EA400990D93 /* District.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0D65154729F863900063F94E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0DAFB6E429E951DE00990D93 /* ViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0D65154829F863970063F94E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0D65154929F863EE0063F94E /* DistrictViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		0D65154C29F8647E0063F94E /* Pharmacy */ = {
+			isa = PBXGroup;
+			children = (
+				0DAFB6F529E9524B00990D93 /* View */,
+				0DAFB6F429E9524000990D93 /* Model */,
+				0DAFB6F729E9526F00990D93 /* ViewModel */,
+			);
+			path = Pharmacy;
+			sourceTree = "<group>";
+		};
 		0DAFB6D429E951DE00990D93 = {
 			isa = PBXGroup;
 			children = (
@@ -70,10 +125,10 @@
 		0DAFB6DF29E951DE00990D93 /* DutyPharmacy */ = {
 			isa = PBXGroup;
 			children = (
+				0D65154429F863360063F94E /* Features */,
 				0DAFB70329EC8E7700990D93 /* PharmacyService */,
-				0DAFB6F729E9526F00990D93 /* ViewModel */,
-				0DAFB6F529E9524B00990D93 /* View */,
-				0DAFB6F429E9524000990D93 /* Model */,
+				0DAFB6E229E951DE00990D93 /* SceneDelegate.swift */,
+				0DAFB6E029E951DE00990D93 /* AppDelegate.swift */,
 				0DAFB6E629E951DE00990D93 /* Main.storyboard */,
 				0DAFB6E929E951DF00990D93 /* Assets.xcassets */,
 				0DAFB6EB29E951DF00990D93 /* LaunchScreen.storyboard */,
@@ -86,7 +141,6 @@
 			isa = PBXGroup;
 			children = (
 				0DAFB6FC29E95A0200990D93 /* Pharmacy.swift */,
-				0DAFB70A29ED9EA400990D93 /* District.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -94,11 +148,8 @@
 		0DAFB6F529E9524B00990D93 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				0DAFB6E029E951DE00990D93 /* AppDelegate.swift */,
-				0DAFB6E229E951DE00990D93 /* SceneDelegate.swift */,
 				0DAFB6F829E9566F00990D93 /* PharmacyTableViewCell.swift */,
 				0DAFB6FA29E9568300990D93 /* PharmacyViewController.swift */,
-				0DAFB6E429E951DE00990D93 /* ViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -204,6 +255,7 @@
 				0DAFB6E129E951DE00990D93 /* AppDelegate.swift in Sources */,
 				0DAFB6F929E9566F00990D93 /* PharmacyTableViewCell.swift in Sources */,
 				0DAFB70B29ED9EA400990D93 /* District.swift in Sources */,
+				0D65154A29F863EE0063F94E /* DistrictViewModel.swift in Sources */,
 				0DAFB6E329E951DE00990D93 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

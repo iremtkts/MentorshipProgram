@@ -15,7 +15,5 @@ class PharmacyViewModel {
     }
 
     
-    func fetchDistrictData(forCity city: String, completion: @escaping (Result<[District], Error>) -> Void) {
-        webService.fetchDistrictData(forCity: city, completion: completion)
-    }
+    
 }

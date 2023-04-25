@@ -18,6 +18,7 @@ class ViewController: UIViewController {
     var districtPickerView = UIPickerView()
     
     private var pharmacyViewModel = PharmacyViewModel()
+    private var districtViewModel = DistrictViewModel()
     
     
     
@@ -40,7 +41,7 @@ class ViewController: UIViewController {
         cityPickerView.tag = 1
         districtPickerView.tag = 2
         
-        pharmacyViewModel.fetchPharmacyData { [weak self] result in
+        pharmacyViewModel.fetchPharmacyData(city: "") { [weak self] result in
             DispatchQueue.main.async {
                 switch result {
                 case .success(let data) :
@@ -102,7 +103,7 @@ extension ViewController: UIPickerViewDelegate , UIPickerViewDataSource {
             cityTextField.text = selectedCity
             cityTextField.resignFirstResponder()
             
-            pharmacyViewModel.fetchDistrictData(forCity: selectedCity) { [weak self] result in
+            districtViewModel.fetchDistrictData(forCity: selectedCity) { [weak self] result in
                 DispatchQueue.main.async {
                     switch result {
                     case .success(let data):
