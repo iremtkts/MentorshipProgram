@@ -20,12 +20,14 @@ class ViewController: UIViewController {
     private var pharmacyViewModel = PharmacyViewModel()
     private var districtViewModel = DistrictViewModel()
     
-    
+    var districts = [District]()
+    var selectedDistrict: String?
+    var selectedCity: String?
     
     let cities = ["Adana", "Adiyaman", "Afyonkarahisar", "Agri", "Amasya", "Ankara", "Antalya", "Artvin", "Aydin", "Balikesir", "Bilecik", "Bingol", "Bitlis", "Bolu", "Burdur", "Bursa", "Canakkale", "Cankiri", "Corum", "Denizli", "Diyarbakir", "Edirne", "Elazig", "Erzincan", "Erzurum", "Eskisehir", "Gaziantep", "Giresun", "Gumushane", "Hakkari", "Hatay", "Isparta", "Mersin", "İstanbul", "İzmir", "Kars", "Kastamonu", "Kayseri", "Kirklareli", "Kirsehir", "Kocaeli", "Konya", "Kutahya", "Malatya", "Manisa", "Kahramanmaras", "Mardin", "Mugla", "Mus", "Nevsehir", "Nigde", "Ordu", "Rize", "Sakarya", "Samsun", "Siirt", "Sinop", "Sivas", "Tekirdag", "Tokat", "Trabzon", "Tunceli", "Sanliurfa", "Usak", "Van", "Yozgat", "Zonguldak", "Aksaray", "Bayburt", "Karaman", "Kirikkale", "Batman", "Sirnak", "Bartin", "Ardahan", "Iğdir", "Yalova", "Karabük", "Kilis", "Osmaniye", "Duzce"]
 
 
-    var districts = [District]()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,19 +40,25 @@ class ViewController: UIViewController {
         districtPickerView.delegate = self
         districtPickerView.dataSource = self
         
+        print("view did load")
+        
         cityPickerView.tag = 1
         districtPickerView.tag = 2
         
-        pharmacyViewModel.fetchPharmacyData(city: "") { [weak self] result in
-            DispatchQueue.main.async {
-                switch result {
-                case .success(let data) :
-                    print("veri alındı \(data)")
-                case .failure(let error):
-                    print(error.localizedDescription)
+        if let selectedCity{
+            pharmacyViewModel.fetchPharmacyData(city:selectedCity) { [weak self] result in
+                DispatchQueue.main.async {
+                    switch result {
+                    case .success(let data) :
+                        print("veri alındı \(data)")
+                    case .failure(let error):
+                        print(error.localizedDescription)
+                    }
                 }
             }
         }
+        
+        
         
 
         
@@ -58,6 +66,13 @@ class ViewController: UIViewController {
     }
     
  
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toPharmacyPage" {
+            let destinationVC = segue.destination as! PharmacyViewController
+            destinationVC.choosenCity = selectedCity
+            destinationVC.choosenDistrict = selectedDistrict
+        }
+    }
    
     @IBAction func tıkl(_ sender: Any) {
         
@@ -99,11 +114,12 @@ extension ViewController: UIPickerViewDelegate , UIPickerViewDataSource {
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         switch pickerView.tag {
         case 1:
-            let selectedCity = cities[row]
-            cityTextField.text = selectedCity
+            let selectedCityValue = cities[row]
+            cityTextField.text = selectedCityValue
             cityTextField.resignFirstResponder()
+            selectedCity = selectedCityValue
             
-            districtViewModel.fetchDistrictData(forCity: selectedCity) { [weak self] result in
+            districtViewModel.fetchDistrictData(forCity: selectedCityValue) { [weak self] result in
                 DispatchQueue.main.async {
                     switch result {
                     case .success(let data):
@@ -114,9 +130,24 @@ extension ViewController: UIPickerViewDelegate , UIPickerViewDataSource {
                     }
                 }
             }
+            
+            if let selectedCity = selectedCity {
+                        pharmacyViewModel.fetchPharmacyData(city: selectedCity) { [weak self] result in
+                            DispatchQueue.main.async {
+                                switch result {
+                                case .success(let data) :
+                                    print("veri alındı \(data)")
+                                case .failure(let error):
+                                    print(error.localizedDescription)
+                                }
+                            }
+                        }
+                    }
         case 2:
-            districtTextField.text = districts[row].text
+            let selectedDistrictValue = districts[row].text
+            districtTextField.text = selectedDistrictValue
             districtTextField.resignFirstResponder()
+            selectedDistrict = selectedDistrictValue
         default:
             return
         }

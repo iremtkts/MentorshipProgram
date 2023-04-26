@@ -10,10 +10,11 @@ import Foundation
 class PharmacyViewModel {
     private let webService = WebService()
     
-    func fetchPharmacyData(city: String, district: String? = nil, completion: @escaping (Result<String, Error>) -> Void) {
+    func fetchPharmacyData(city: String, district: String? = nil, completion: @escaping (Result<PharmacyResponse, Error>) -> Void) {
         webService.fetchData(city: city, district: district, completion: completion)
     }
+}
 
     
     
-}
+
