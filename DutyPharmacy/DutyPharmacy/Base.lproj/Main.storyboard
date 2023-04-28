@@ -3,6 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Map view configurations" minToolsVersion="14.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -113,6 +114,7 @@
                                                     <buttonConfiguration key="configuration" style="plain" title="Harita ile Görüntüleyin"/>
                                                     <connections>
                                                         <action selector="showOnMapClicked:" destination="BTb-Ea-hYp" eventType="touchUpInside" id="6xm-xa-nnY"/>
+                                                        <segue destination="IxH-Ro-oxO" kind="show" identifier="toMapDetail" id="qeB-f3-rFp"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -155,6 +157,37 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ftD-Ah-eYe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1693.8931297709923" y="15.492957746478874"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="ETC-Tl-FqK">
+            <objects>
+                <viewController id="IxH-Ro-oxO" customClass="MapViewController" customModule="DutyPharmacy" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Bla-Ad-TFR">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xCT-VM-uSE">
+                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
+                                <standardMapConfiguration key="preferredConfiguration"/>
+                            </mapView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="E8k-Z7-J9k"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="E8k-Z7-J9k" firstAttribute="trailing" secondItem="xCT-VM-uSE" secondAttribute="trailing" id="4bO-Qo-ef5"/>
+                            <constraint firstItem="E8k-Z7-J9k" firstAttribute="bottom" secondItem="xCT-VM-uSE" secondAttribute="bottom" id="AIT-wg-Uky"/>
+                            <constraint firstItem="xCT-VM-uSE" firstAttribute="top" secondItem="E8k-Z7-J9k" secondAttribute="top" id="MMt-IH-hcq"/>
+                            <constraint firstItem="xCT-VM-uSE" firstAttribute="leading" secondItem="E8k-Z7-J9k" secondAttribute="leading" id="TN6-6T-Ykb"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="erk-nl-sXG"/>
+                    <connections>
+                        <outlet property="mapView" destination="xCT-VM-uSE" id="tLg-Tr-PZi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="O4Y-vt-oZg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2459" y="10"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Ruj-p4-khx">

@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		0D65154A29F863EE0063F94E /* DistrictViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D65154929F863EE0063F94E /* DistrictViewModel.swift */; };
 		0D65154F29F9575E0063F94E /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D65154E29F9575E0063F94E /* WebService.swift */; };
+		0D65155729FC678C0063F94E /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D65155629FC678C0063F94E /* MapViewModel.swift */; };
+		0D65155B29FC67CD0063F94E /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D65155A29FC67CD0063F94E /* MapViewController.swift */; };
 		0DAFB6E129E951DE00990D93 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAFB6E029E951DE00990D93 /* AppDelegate.swift */; };
 		0DAFB6E329E951DE00990D93 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAFB6E229E951DE00990D93 /* SceneDelegate.swift */; };
 		0DAFB6E529E951DE00990D93 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAFB6E429E951DE00990D93 /* ViewController.swift */; };
@@ -26,6 +28,8 @@
 /* Begin PBXFileReference section */
 		0D65154929F863EE0063F94E /* DistrictViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistrictViewModel.swift; sourceTree = "<group>"; };
 		0D65154E29F9575E0063F94E /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
+		0D65155629FC678C0063F94E /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
+		0D65155A29FC67CD0063F94E /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		0DAFB6DD29E951DE00990D93 /* DutyPharmacy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DutyPharmacy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DAFB6E029E951DE00990D93 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0DAFB6E229E951DE00990D93 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -56,6 +60,7 @@
 		0D65154429F863360063F94E /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				0D65155029FC65410063F94E /* Map */,
 				0D65154C29F8647E0063F94E /* Pharmacy */,
 				0D65154529F863420063F94E /* Locations */,
 			);
@@ -112,6 +117,39 @@
 				0D65154E29F9575E0063F94E /* WebService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		0D65155029FC65410063F94E /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				0D65155329FC67290063F94E /* Model */,
+				0D65155229FC671F0063F94E /* ViewModel */,
+				0D65155129FC67180063F94E /* View */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		0D65155129FC67180063F94E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0D65155A29FC67CD0063F94E /* MapViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0D65155229FC671F0063F94E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0D65155629FC678C0063F94E /* MapViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		0D65155329FC67290063F94E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		0DAFB6D429E951DE00990D93 = {
@@ -253,10 +291,12 @@
 				0DAFB6FB29E9568300990D93 /* PharmacyViewController.swift in Sources */,
 				0DAFB6E129E951DE00990D93 /* AppDelegate.swift in Sources */,
 				0DAFB6F929E9566F00990D93 /* PharmacyTableViewCell.swift in Sources */,
+				0D65155B29FC67CD0063F94E /* MapViewController.swift in Sources */,
 				0DAFB70B29ED9EA400990D93 /* District.swift in Sources */,
 				0D65154A29F863EE0063F94E /* DistrictViewModel.swift in Sources */,
 				0D65154F29F9575E0063F94E /* WebService.swift in Sources */,
 				0DAFB6E329E951DE00990D93 /* SceneDelegate.swift in Sources */,
+				0D65155729FC678C0063F94E /* MapViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

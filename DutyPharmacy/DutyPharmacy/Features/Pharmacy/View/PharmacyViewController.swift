@@ -13,6 +13,7 @@ class PharmacyViewController: UIViewController {
     var choosenDistrict : String?
     var pharmacies : [Pharmacy] = []
     var pharmacyViewModel = PharmacyViewModel()
+    var selectedPharmacy : String?
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -55,6 +56,7 @@ class PharmacyViewController: UIViewController {
             cell.pharmacyNameTextLabel?.text = pharmacy.name
             cell.districtNameTextLabel?.text = pharmacy.dist
             cell.addressTextLabel?.text = pharmacy.address
+            
             
             return cell
         }
