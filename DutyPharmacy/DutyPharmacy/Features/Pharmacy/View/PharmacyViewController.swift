@@ -13,7 +13,7 @@ class PharmacyViewController: UIViewController {
     var choosenDistrict : String?
     var pharmacies : [Pharmacy] = []
     var pharmacyViewModel = PharmacyViewModel()
-    var selectedPharmacy : String?
+    var selectedPharmacy : Pharmacy?
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -41,6 +41,15 @@ class PharmacyViewController: UIViewController {
         }
         
     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toMapDetail",
+           let mapVC = segue.destination as? MapViewController {
+            mapVC.selectedPharmacy = selectedPharmacy
+            print(selectedPharmacy?.loc)
+        }
+    }
+
+    
 }
     
     extension PharmacyViewController : UITableViewDelegate , UITableViewDataSource {
@@ -52,15 +61,28 @@ class PharmacyViewController: UIViewController {
             let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! PharmacyTableViewCell
             
             let pharmacy = pharmacies[indexPath.row]
+                cell.delegate = self
+                cell.configure(with: pharmacy)
             
-            cell.pharmacyNameTextLabel?.text = pharmacy.name
+            /*cell.pharmacyNameTextLabel?.text = pharmacy.name
             cell.districtNameTextLabel?.text = pharmacy.dist
             cell.addressTextLabel?.text = pharmacy.address
             
-            
+            **/
             return cell
+        }
+        
+        func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+            selectedPharmacy = pharmacies[indexPath.row]
         }
         
     }
     
+extension PharmacyViewController: PharmacyTableViewCellDelegate {
+    func didSelectPharmacy(_ pharmacy: Pharmacy) {
+        selectedPharmacy = pharmacy
+        print("pharmacyvcdelegatecell\(selectedPharmacy?.loc)")
+        performSegue(withIdentifier: "toMapDetail", sender: self)
+    }
+}
 

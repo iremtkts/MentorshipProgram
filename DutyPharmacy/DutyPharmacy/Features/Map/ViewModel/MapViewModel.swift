@@ -8,10 +8,14 @@
 import Foundation
 
 class MapViewModel {
-     private let webService = WebService()
-    
-    func fetchPharmacyData(city: String, district: String? = nil, completion: @escaping (Result<PharmacyResponse, Error>) -> Void) {
-        webService.fetchData(city: city, district: district, completion: completion)
+   
+    func getSelectedPharmacyLocation (from pharmacy : Pharmacy) -> Location?{
+        let coordinates = pharmacy.loc.components(separatedBy: ",")
+        if let latitude = Double(coordinates[0]) , let longitude = Double(coordinates[1]) {
+                return Location(latitude: latitude, longitude: longitude)
+        } else {
+           
+            return nil
+        }
     }
-    
 }

@@ -22,6 +22,7 @@ struct Pharmacy : Decodable {
     let dist : String
     let address : String
     let loc : String
+    let phone : String
  
     
 }
