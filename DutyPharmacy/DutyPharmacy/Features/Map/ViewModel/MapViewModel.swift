@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CoreLocation
 
 class MapViewModel {
    
@@ -18,4 +19,15 @@ class MapViewModel {
             return nil
         }
     }
+    
+    
+   /* var locationUpdateHandler: ((CLLocationCoordinate2D) -> Void)?
+    
+    func updateLocation (_ location:CLLocationCoordinate2D) {
+        locationUpdateHandler?(location)
+    }
+    */
+    
 }
+
+

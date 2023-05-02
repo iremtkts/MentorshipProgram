@@ -59,18 +59,22 @@ class PharmacyViewController: UIViewController {
         
         func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! PharmacyTableViewCell
-            
+
             let pharmacy = pharmacies[indexPath.row]
-                cell.delegate = self
-                cell.configure(with: pharmacy)
-            
-            /*cell.pharmacyNameTextLabel?.text = pharmacy.name
+            cell.pharmacy = pharmacy
+
+            cell.pharmacyNameTextLabel?.text = pharmacy.name
             cell.districtNameTextLabel?.text = pharmacy.dist
             cell.addressTextLabel?.text = pharmacy.address
-            
-            **/
+
+            cell.onShowOnMapClicked = { [weak self] selectedPharmacy in
+                self?.selectedPharmacy = selectedPharmacy
+                self?.performSegue(withIdentifier: "toMapDetail", sender: self)
+            }
+
             return cell
         }
+
         
         func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
             selectedPharmacy = pharmacies[indexPath.row]
@@ -78,11 +82,5 @@ class PharmacyViewController: UIViewController {
         
     }
     
-extension PharmacyViewController: PharmacyTableViewCellDelegate {
-    func didSelectPharmacy(_ pharmacy: Pharmacy) {
-        selectedPharmacy = pharmacy
-        print("pharmacyvcdelegatecell\(selectedPharmacy?.loc)")
-        performSegue(withIdentifier: "toMapDetail", sender: self)
-    }
-}
+
 
