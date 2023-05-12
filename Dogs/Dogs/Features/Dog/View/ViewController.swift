@@ -16,34 +16,49 @@ class ViewController: UIViewController {
         return dogImage
     }()
     
-    private let myButton: UIButton = {
+    private let changeButton: UIButton = {
         let button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.titleLabel?.numberOfLines = 0
-        button.setTitle("Show Another Picture", for: .normal)
+        button.setTitle("Change Picture", for: .normal)
+        button.titleLabel?.font = .boldSystemFont(ofSize: 17)
+        button.setTitleColor(.white, for: .normal)
+        button.backgroundColor = .red
+        button.layer.borderColor = UIColor.black.cgColor
+        button.layer.borderWidth = 1.5
+        button.layer.cornerRadius = 5
+        button.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
         return button
     }()
+    
+    
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(dogImageView)
-        view.addSubview(myButton)
+        view.addSubview(changeButton)
         constraints()
        
     }
     
     func constraints(){
         // Dog ImageView Constraints
-        dogImageView.widthAnchor.constraint(equalToConstant: 200).isActive = true
-        dogImageView.heightAnchor.constraint(equalToConstant: 200).isActive = true
+        dogImageView.widthAnchor.constraint(equalToConstant: 400).isActive = true
+        dogImageView.heightAnchor.constraint(equalToConstant: 400).isActive = true
         dogImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         dogImageView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
         
         //Button Constraints
-        myButton.leadingAnchor.constraint(equalTo: dogImageView.leadingAnchor).isActive = true
-        myButton.topAnchor.constraint(equalTo: dogImageView.bottomAnchor).isActive = true
+        changeButton.topAnchor.constraint(equalTo:  dogImageView.bottomAnchor, constant: 30).isActive = true
+        changeButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        changeButton.widthAnchor.constraint(equalToConstant: 120).isActive = true
+        changeButton.heightAnchor.constraint(equalToConstant: 60).isActive = true
         
+    }
+    
+    @objc func buttonTapped(sender: UIButton) {
+        print("button clicked")
     }
 }
 
