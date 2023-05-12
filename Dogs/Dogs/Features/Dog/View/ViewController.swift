@@ -1,9 +1,3 @@
-//
-//  ViewController.swift
-//  Dogs
-//
-//  Created by iremt on 6.05.2023.
-//
 
 import UIKit
 
@@ -36,20 +30,22 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.addSubview(dogImageView)
-        view.addSubview(changeButton)
+        
+        
         constraints()
        
     }
     
     func constraints(){
         // Dog ImageView Constraints
+        view.addSubview(dogImageView)
         dogImageView.widthAnchor.constraint(equalToConstant: 400).isActive = true
         dogImageView.heightAnchor.constraint(equalToConstant: 400).isActive = true
         dogImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         dogImageView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
         
         //Button Constraints
+        view.addSubview(changeButton)
         changeButton.topAnchor.constraint(equalTo:  dogImageView.bottomAnchor, constant: 30).isActive = true
         changeButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         changeButton.widthAnchor.constraint(equalToConstant: 120).isActive = true
