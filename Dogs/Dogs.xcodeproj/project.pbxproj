@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		0D34C9A12A2A2EFB00CB03CF /* Dog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D34C9A02A2A2EFB00CB03CF /* Dog.swift */; };
 		0D34C9A32A2A309F00CB03CF /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D34C9A22A2A309F00CB03CF /* WebService.swift */; };
+		0D34C9A62A2A5DC100CB03CF /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 0D34C9A52A2A5DC100CB03CF /* SDWebImage */; };
+		0D34C9A82A2A611B00CB03CF /* DogViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D34C9A72A2A611B00CB03CF /* DogViewModel.swift */; };
 		0DA23E6E2A06DAE100AE1D0F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA23E6D2A06DAE100AE1D0F /* AppDelegate.swift */; };
 		0DA23E702A06DAE100AE1D0F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA23E6F2A06DAE100AE1D0F /* SceneDelegate.swift */; };
 		0DA23E722A06DAE100AE1D0F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA23E712A06DAE100AE1D0F /* ViewController.swift */; };
@@ -20,6 +22,7 @@
 /* Begin PBXFileReference section */
 		0D34C9A02A2A2EFB00CB03CF /* Dog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dog.swift; sourceTree = "<group>"; };
 		0D34C9A22A2A309F00CB03CF /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
+		0D34C9A72A2A611B00CB03CF /* DogViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogViewModel.swift; sourceTree = "<group>"; };
 		0DA23E6A2A06DAE100AE1D0F /* Dogs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dogs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DA23E6D2A06DAE100AE1D0F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0DA23E6F2A06DAE100AE1D0F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -35,6 +38,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D34C9A62A2A5DC100CB03CF /* SDWebImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -109,6 +113,7 @@
 		0DA23E852A06E1AF00AE1D0F /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				0D34C9A72A2A611B00CB03CF /* DogViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -137,6 +142,9 @@
 			dependencies = (
 			);
 			name = Dogs;
+			packageProductDependencies = (
+				0D34C9A52A2A5DC100CB03CF /* SDWebImage */,
+			);
 			productName = Dogs;
 			productReference = 0DA23E6A2A06DAE100AE1D0F /* Dogs.app */;
 			productType = "com.apple.product-type.application";
@@ -165,6 +173,9 @@
 				Base,
 			);
 			mainGroup = 0DA23E612A06DAE100AE1D0F;
+			packageReferences = (
+				0D34C9A42A2A5DC100CB03CF /* XCRemoteSwiftPackageReference "SDWebImage" */,
+			);
 			productRefGroup = 0DA23E6B2A06DAE100AE1D0F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -195,6 +206,7 @@
 				0DA23E722A06DAE100AE1D0F /* ViewController.swift in Sources */,
 				0DA23E6E2A06DAE100AE1D0F /* AppDelegate.swift in Sources */,
 				0D34C9A12A2A2EFB00CB03CF /* Dog.swift in Sources */,
+				0D34C9A82A2A611B00CB03CF /* DogViewModel.swift in Sources */,
 				0D34C9A32A2A309F00CB03CF /* WebService.swift in Sources */,
 				0DA23E702A06DAE100AE1D0F /* SceneDelegate.swift in Sources */,
 			);
@@ -412,6 +424,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0D34C9A42A2A5DC100CB03CF /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0D34C9A52A2A5DC100CB03CF /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0D34C9A42A2A5DC100CB03CF /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 0DA23E622A06DAE100AE1D0F /* Project object */;
 }

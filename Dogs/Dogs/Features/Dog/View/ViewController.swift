@@ -1,7 +1,11 @@
 
 import UIKit
+import SDWebImage
 
 class ViewController: UIViewController {
+    
+    
+    private let viewModel = DogViewModel()
     
     private let dogImageView: UIImageView = {
        let dogImage = UIImageView()
@@ -51,8 +55,17 @@ class ViewController: UIViewController {
         
     }
     
-    @objc func buttonTapped(sender: UIButton) {
-        print("button clicked")
+    @objc func buttonTapped(_ sender: Any) {
+        viewModel.fetchData { [weak self] result in
+            switch result {
+            case .success(let dog):
+                DispatchQueue.main.async {
+                    self?.dogImageView.sd_setImage(with: URL(string: dog.message), placeholderImage: UIImage(named: "dog.jpg"))
+                }
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
     }
 }
 
