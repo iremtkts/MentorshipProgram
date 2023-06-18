@@ -11,11 +11,26 @@ import SDWebImage
 
 class DogViewModel {
     
-    private let webService = WebService()
+    private let dogService = DogService
+    weak var output: DogViewModelOutput?
     
-    func fetchData(completion: @escaping (Result<Dog,Error>)-> Void)  {
-        webService.fetchData(completion: completion)
+    init(dogService: DogService) {
+        self.dogService = dogService
     }
     
+   
+    
+    func fetchData() {
+        dogService.fetchData { [weak self] result in
+
+            switch result {
+            case .success(let dog):
+                self?.output?.updateImage(message: dog.message)
+            case .failure(NSError()):
+                self?.output?.updateImage(message: "NO image")
+            }
+        }
+        
+    }
    
 }

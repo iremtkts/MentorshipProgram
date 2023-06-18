@@ -1,14 +1,13 @@
 //
-//  WebService.swift
+//  APIManager.swift
 //  Dogs
 //
-//  Created by iremt on 2.06.2023.
+//  Created by iremt on 18.06.2023.
 //
 
 import Foundation
 
-class WebService {
-    
+class APIManager: DogService {
     func fetchData (completion: @escaping (Result <Dog , Error>) -> Void) {
         guard let url = URL(string: "https://dog.ceo/api/breeds/image/random") else {
             print("invalid url")
@@ -33,5 +32,7 @@ class WebService {
 
         }.resume()
     }
+
+    
     
 }

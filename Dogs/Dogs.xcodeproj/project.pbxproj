@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D2F80992A3F674F008793F3 /* DogViewModelOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2F80982A3F674F008793F3 /* DogViewModelOutput.swift */; };
+		0D2F809B2A3F692A008793F3 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2F809A2A3F692A008793F3 /* APIManager.swift */; };
+		0D2F809F2A3F6A80008793F3 /* DogService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2F809E2A3F6A80008793F3 /* DogService.swift */; };
 		0D34C9A12A2A2EFB00CB03CF /* Dog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D34C9A02A2A2EFB00CB03CF /* Dog.swift */; };
-		0D34C9A32A2A309F00CB03CF /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D34C9A22A2A309F00CB03CF /* WebService.swift */; };
 		0D34C9A62A2A5DC100CB03CF /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 0D34C9A52A2A5DC100CB03CF /* SDWebImage */; };
 		0D34C9A82A2A611B00CB03CF /* DogViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D34C9A72A2A611B00CB03CF /* DogViewModel.swift */; };
 		0DA23E6E2A06DAE100AE1D0F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA23E6D2A06DAE100AE1D0F /* AppDelegate.swift */; };
@@ -20,8 +22,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0D2F80982A3F674F008793F3 /* DogViewModelOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogViewModelOutput.swift; sourceTree = "<group>"; };
+		0D2F809A2A3F692A008793F3 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		0D2F809E2A3F6A80008793F3 /* DogService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogService.swift; sourceTree = "<group>"; };
 		0D34C9A02A2A2EFB00CB03CF /* Dog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dog.swift; sourceTree = "<group>"; };
-		0D34C9A22A2A309F00CB03CF /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
 		0D34C9A72A2A611B00CB03CF /* DogViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogViewModel.swift; sourceTree = "<group>"; };
 		0DA23E6A2A06DAE100AE1D0F /* Dogs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dogs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DA23E6D2A06DAE100AE1D0F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -87,7 +91,8 @@
 		0DA23E822A06E15C00AE1D0F /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				0D34C9A22A2A309F00CB03CF /* WebService.swift */,
+				0D2F809A2A3F692A008793F3 /* APIManager.swift */,
+				0D2F809E2A3F6A80008793F3 /* DogService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -114,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				0D34C9A72A2A611B00CB03CF /* DogViewModel.swift */,
+				0D2F80982A3F674F008793F3 /* DogViewModelOutput.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -203,11 +209,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D2F809B2A3F692A008793F3 /* APIManager.swift in Sources */,
 				0DA23E722A06DAE100AE1D0F /* ViewController.swift in Sources */,
 				0DA23E6E2A06DAE100AE1D0F /* AppDelegate.swift in Sources */,
 				0D34C9A12A2A2EFB00CB03CF /* Dog.swift in Sources */,
 				0D34C9A82A2A611B00CB03CF /* DogViewModel.swift in Sources */,
-				0D34C9A32A2A309F00CB03CF /* WebService.swift in Sources */,
+				0D2F80992A3F674F008793F3 /* DogViewModelOutput.swift in Sources */,
+				0D2F809F2A3F6A80008793F3 /* DogService.swift in Sources */,
 				0DA23E702A06DAE100AE1D0F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
