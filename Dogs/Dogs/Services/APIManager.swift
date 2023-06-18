@@ -8,6 +8,8 @@
 import Foundation
 
 class APIManager: DogService {
+    
+    
     func fetchData (completion: @escaping (Result <Dog , Error>) -> Void) {
         guard let url = URL(string: "https://dog.ceo/api/breeds/image/random") else {
             print("invalid url")

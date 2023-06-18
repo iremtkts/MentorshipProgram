@@ -2,10 +2,10 @@
 import UIKit
 import SDWebImage
 
-class ViewController: UIViewController {
-    
-    
-    private let viewModel = DogViewModel()
+
+class ViewController: UIViewController{
+  
+    private let viewModel = DogViewModel(dogService: APIManager())
     
     private let dogImageView: UIImageView = {
        let dogImage = UIImageView()
@@ -35,6 +35,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         constraints()
+        viewModel.output = self
        
     }
     
@@ -56,16 +57,16 @@ class ViewController: UIViewController {
     }
     
     @objc func buttonTapped(_ sender: Any) {
-        viewModel.fetchData { [weak self] result in
-            switch result {
-            case .success(let dog):
-                DispatchQueue.main.async {
-                    self?.dogImageView.sd_setImage(with: URL(string: dog.message), placeholderImage: UIImage(named: "dog.jpg"))
-                }
-            case .failure(let error):
-                print(error.localizedDescription)
-            }
-        }
+        viewModel.fetchData()
     }
 }
 
+extension ViewController: DogViewModelOutput {
+    
+    func updateImage(message: String) {
+        DispatchQueue.main.async {
+            self.dogImageView.sd_setImage(with: URL(string: message), placeholderImage: UIImage(named: "dog.jpg"))
+        }
+
+    }
+}

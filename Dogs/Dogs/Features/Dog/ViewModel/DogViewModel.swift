@@ -6,15 +6,16 @@
 //
 
 import Foundation
-import SDWebImage
+
 
 
 class DogViewModel {
     
-    private let dogService = DogService
+    private var dogService = APIManager()
+    
     weak var output: DogViewModelOutput?
     
-    init(dogService: DogService) {
+    init(dogService: APIManager) {
         self.dogService = dogService
     }
     
@@ -26,7 +27,7 @@ class DogViewModel {
             switch result {
             case .success(let dog):
                 self?.output?.updateImage(message: dog.message)
-            case .failure(NSError()):
+            case .failure(_):
                 self?.output?.updateImage(message: "NO image")
             }
         }
